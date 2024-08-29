@@ -30,7 +30,6 @@ def independent_test(args):
     neg_data_val, _ = load_bert_data(fasta_path_val_negative, npz_dir_negative, threshold, 0)
     neg_data_train2, _ = load_data(fasta_path_train_negative, npz_dir_negative, threshold, 0)
     neg_data_val2, _ = load_data(fasta_path_val_negative, npz_dir_negative, threshold, 0)
-    # sampled_neg_data_train = random.sample(neg_data_train, 292)
     data_train.extend(neg_data_train)
     data_val.extend(neg_data_val)
 
@@ -104,7 +103,7 @@ if __name__ == '__main__':
                         help='Path of the positive npz folder, which saves the predicted structure')
 
     parser.add_argument('-b', type=int, default=256, help='Batch size')
-    parser.add_argument('-save', type=str, default='/home/lqs/DGIL-6/GAT_GCN_CATauc_saved_models',
+    parser.add_argument('-save', type=str, default='/home/lqs/DGIL-6/saved_model',
                         help='The directory saving the trained models')
 
     parser.add_argument('-o', type=str, default='test_results.csv', help='Results file')
